@@ -4,7 +4,6 @@ const Article = require('./models/article')
 const articleRouter = require('./routes/articles')
 const methodOverride = require('method-override')
 const app = express()
-
 mongoose.connect('mongodb://localhost/blog',{
      useNewUrlParser: true, useUnifiedTopology: true
     })
@@ -23,4 +22,4 @@ app.get('/',async(req,res)=>{
     res.render('articles/index',{articles: articles})
 })
 app.use('/articles', articleRouter)
-app.listen(5000)
+app.listen(5000);
